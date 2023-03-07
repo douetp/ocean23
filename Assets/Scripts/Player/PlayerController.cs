@@ -13,7 +13,6 @@ namespace Player
 
         [field: HideInInspector] public Vector2 MovementInput { get; set; }
 
-    
         // Movement Variables
         [SerializeField, Range(0f, 50f)]
         private float maxSpeed = 10f;
