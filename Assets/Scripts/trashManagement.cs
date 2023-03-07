@@ -6,7 +6,31 @@ public class trashManagement : MonoBehaviour
 {
     // Start is called before the first frame update
     
+    private Vector2 currentFlowDir;
+        public Vector2 CurrentFlowDir
+        {
+            get
+            {
+                return currentFlowDir;
+            }
+            set
+            {
+                currentFlowDir = value;
+            }
+        }
 
+        private float currentFlowForce;
+        public float CurrentFlowForce
+        {
+            get
+            {
+                return currentFlowForce;
+            }
+            set
+            {
+                currentFlowForce = value;
+            }
+        }
     void Start()
     {
 
@@ -19,20 +43,20 @@ public class trashManagement : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    public void OnTriggerEnter2D(Collider2D collider)
     {
         GameObject otherObj = collider.gameObject;
         Debug.Log("Triggered with: " + otherObj);
     }
 
 
-    void updateEnterCurrent() {
+    public void updateEnterCurrent() {
         this.CurrentFlowDir.set(Vector2 (0,8));
         this.CurrentFlowForce.set(1.5f);
     }
 
 
-    void updateExitCurrent() {
+    public void updateExitCurrent() {
         this.CurrentFlowDir.set(Vector2 (0,0));
         this.CurrentFlowForce.set(0f);
     }

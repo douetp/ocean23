@@ -5,12 +5,38 @@ using UnityEngine.Events;
 namespace Player
 {
     [RequireComponent(typeof(PlayerController))]
-    public class InputManager : MonoBehaviour, IFlowManager
+    public class InputManager : MonoBehaviour, IFlowMovable
     {
         private Camera viewCam;
         public ReadTwoArduinoValuesExample myArduino;
         public bool locked = false;        
         private PlayerController _playerController;
+
+        private Vector2 currentFlowDir;
+        public Vector2 CurrentFlowDir
+        {
+            get
+            {
+                return currentFlowDir;
+            }
+            set
+            {
+                currentFlowDir = value;
+            }
+        }
+
+        private float currentFlowForce;
+        public float CurrentFlowForce
+        {
+            get
+            {
+                return currentFlowForce;
+            }
+            set
+            {
+                currentFlowForce = value;
+            }
+        }
 
         private void Awake()
         {
@@ -20,6 +46,8 @@ namespace Player
         private void Start()
         {
             viewCam = Camera.main;
+            IFlowMovable.CurrentFlowForce.set(1f);
+            IFlowMovable.CurrentFlowDir.set(Vector2 (0,0));
         }
         
         private void Update()
@@ -47,16 +75,16 @@ namespace Player
         }
 
 
-        void ApplyFlow() {
+        void IFlowMovable.ApplyFlow() {
             this.velocity = this.CurrentFlowDir.get() * this.CurrentFlowForce.get();
         }
 
-        void updateEnterCurrent() {
+        void IFlowMovable.updateEnterCurrent() {
             this.CurrentFlowDir.set(Vector2 (0,10));
             this.CurrentFlowForce.set(2.0f);
         }
 
-        void updateExitCurrent() {
+        void IFlowMovable.updateExitCurrent() {
             this.CurrentFlowDir.set(Vector2 (0,0));
             this.CurrentFlowForce.set(0f);
         }
