@@ -7,11 +7,14 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace Player
 {
-    [RequireComponent(typeof(InputManager), typeof(Rigidbody2D))]    public class PlayerController : MonoBehaviour, IFlowMovable
+    [RequireComponent(typeof(InputManager), typeof(Rigidbody2D))]    
+    public class PlayerController : MonoBehaviour, IFlowMovable
     
     {
         private Rigidbody2D _rb;
-
+        public int maxTrash = 50;
+        public int currentTrash;
+        public TrashBar trashBar;
         private Vector2 currentFlowDir;
         public Vector2 CurrentFlowDir
         {
@@ -43,7 +46,11 @@ namespace Player
             _rb.velocity += this.CurrentFlowDir * this.CurrentFlowForce;
         }
 
-
+        public void Start(){
+            currentTrash = 0;
+            trashBar.setMaxTrash(maxTrash);
+            trashBar.setTrash(currentTrash);
+        }
 
         [field: HideInInspector] public Vector2 MovementInput { get; set; }
 
@@ -99,5 +106,20 @@ namespace Player
             this.ApplyFlow();
 
         }
+
+        void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject otherObj = collision.gameObject;
+        if (otherObj.tag == "Trash")
+        {
+            Destroy(otherObj);
+            currentTrash+=10;
+            trashBar.setTrash(currentTrash);
+        }else if(otherObj.tag == "Vaisseau"){
+            //Launch cinematic
+            Debug.Log("Vaisseau");
+            
+        }
+    }
     }
 }
