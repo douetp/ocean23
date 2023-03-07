@@ -24,6 +24,18 @@ public class trashManagement : MonoBehaviour
         GameObject otherObj = collider.gameObject;
         Debug.Log("Triggered with: " + otherObj);
     }
+
+
+    void updateEnterCurrent() {
+        this.CurrentFlowDir.set(Vector2 (0,8));
+        this.CurrentFlowForce.set(1.5f);
+    }
+
+
+    void updateExitCurrent() {
+        this.CurrentFlowDir.set(Vector2 (0,0));
+        this.CurrentFlowForce.set(0f);
+    }
     // Update is called once per frame
     void Update()
     {

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 namespace Player
 {
     [RequireComponent(typeof(PlayerController))]
-    public class InputManager : MonoBehaviour
+    public class InputManager : MonoBehaviour, IFlowManager
     {
         private Camera viewCam;
         public ReadTwoArduinoValuesExample myArduino;
@@ -45,5 +45,22 @@ namespace Player
 
 
         }
+
+
+        void ApplyFlow() {
+            this.velocity = this.CurrentFlowDir.get() * this.CurrentFlowForce.get();
+        }
+
+        void updateEnterCurrent() {
+            this.CurrentFlowDir.set(Vector2 (0,10));
+            this.CurrentFlowForce.set(2.0f);
+        }
+
+        void updateExitCurrent() {
+            this.CurrentFlowDir.set(Vector2 (0,0));
+            this.CurrentFlowForce.set(0f);
+        }
+
+
     }
 }

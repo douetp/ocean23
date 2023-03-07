@@ -15,7 +15,11 @@ public class flowManagement : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         GameObject otherObj = collider.gameObject;
-        rb = otherObj.GetComponent<Rigidbody2D>();
+
+        otherObj.updateEnterCurrent();
+
+        otherObj.GetComponent<Rigidbody>().AddForce(otherObj.CurrentFlowDirection * otherObj.CurrentFlowForce);
+
         
         Debug.Log("Velocity ++" + rb.velocity);
     }
@@ -23,9 +27,11 @@ public class flowManagement : MonoBehaviour
     void OnTriggerExit2D(Collider2D collider)
     {
         GameObject otherObj = collider.gameObject;
-        rb = otherObj.GetComponent<Rigidbody2D>();
-        Vector2 vel = rb.velocity;
-        rb.velocity = vel.normalized * 0.2f;
+        
+        otherObj.updateExitCurrent();
+        otherObj.GetComponent<Rigidbody>().AddForce(otherObj.CurrentFlowDirection * otherObj.CurrentFlowForce);
+        
+
         Debug.Log("Velocity --" + rb.velocity);
     }
     // Update is called once per frame
