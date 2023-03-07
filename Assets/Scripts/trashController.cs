@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class trashManagement : MonoBehaviour, IFlowMovable
+public class trashController : MonoBehaviour, IFlowMovable
 {
     // Start is called before the first frame update
     private Rigidbody2D _rb;
