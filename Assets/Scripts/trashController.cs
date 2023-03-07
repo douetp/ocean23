@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class trashManagement : MonoBehaviour, IFlowMovable
+public class trashController : MonoBehaviour, IFlowMovable
 {
     // Start is called before the first frame update
     private Rigidbody2D _rb;
@@ -34,6 +34,9 @@ public class trashManagement : MonoBehaviour, IFlowMovable
                 currentFlowForce = value;
             }
         }
+    void Awake() {
+        _rb = GetComponent<Rigidbody2D>();
+    }
     void Start()
     {
 
@@ -43,7 +46,12 @@ public class trashManagement : MonoBehaviour, IFlowMovable
     {
         GameObject otherObj = collision.gameObject;
         Debug.Log("Collided with: " + otherObj);
-        Destroy(this.gameObject);
+        
+        trashController movable = otherObj.GetComponent<trashController>();
+
+        if (movable == null) {
+            Destroy(this.gameObject);
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collider)
@@ -54,7 +62,7 @@ public class trashManagement : MonoBehaviour, IFlowMovable
 
 
     public void ApplyFlow() {
-            _rb.velocity += this.CurrentFlowDir * this.CurrentFlowForce * coeffSpeed;
+        _rb.velocity += this.CurrentFlowDir * this.CurrentFlowForce * coeffSpeed;
         }
     // Update is called once per frame
     void Update()
