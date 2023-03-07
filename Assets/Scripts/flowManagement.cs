@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class flowManagement : MonoBehaviour
 {
-   public Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     void Start()
     {
@@ -15,19 +15,18 @@ public class flowManagement : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         GameObject otherObj = collider.gameObject;
-        Debug.Log("Triggered with: " + otherObj);
         rb = otherObj.GetComponent<Rigidbody2D>();
-        Vector3 vel = rb.velocity;
-        rb.velocity = vel.normalized * 1.5f;
+        
+        Debug.Log("Velocity ++" + rb.velocity);
     }
 
     void OnTriggerExit2D(Collider2D collider)
     {
         GameObject otherObj = collider.gameObject;
-        Debug.Log("Triggered with: " + otherObj);
         rb = otherObj.GetComponent<Rigidbody2D>();
-        Vector3 vel = rb.velocity;
-        rb.velocity = vel.normalized * 0.5f;
+        Vector2 vel = rb.velocity;
+        rb.velocity = vel.normalized * 0.2f;
+        Debug.Log("Velocity --" + rb.velocity);
     }
     // Update is called once per frame
     void Update()
