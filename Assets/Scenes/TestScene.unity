@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a06ebcc7f629a4fab16fb0f68c4f85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coeffSpeed: 2
+  coeffSpeed: 0.3
 --- !u!1001 &20743562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a06ebcc7f629a4fab16fb0f68c4f85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coeffSpeed: 2
+  coeffSpeed: 0.3
 --- !u!1 &392682955
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a06ebcc7f629a4fab16fb0f68c4f85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coeffSpeed: 0.8
+  coeffSpeed: 0.3
 --- !u!1 &774723566
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +712,7 @@ GameObject:
   - component: {fileID: 774723570}
   - component: {fileID: 774723569}
   - component: {fileID: 774723572}
+  - component: {fileID: 774723573}
   m_Layer: 1
   m_Name: Player
   m_TagString: Untagged
@@ -868,9 +869,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e11e4eeb09cb540a1016cd27ed5e7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTrash: 50
-  currentTrash: 0
-  trashBar: {fileID: 1124621000}
 --- !u!1 &840137079 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8063230370420195204, guid: 7f30fb0f177be344babe4216c548ce13, type: 3}
@@ -888,7 +886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a06ebcc7f629a4fab16fb0f68c4f85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coeffSpeed: 0.8
+  coeffSpeed: 0.3
 --- !u!1 &894214950
 GameObject:
   m_ObjectHideFlags: 0
