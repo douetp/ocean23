@@ -10,8 +10,9 @@ public class PlayerTrash : MonoBehaviour
     void Start()
     {
         currentTrash = 0;
-        trashBar.setTrash(currentTrash);
         trashBar.setMaxTrash(maxTrash);
+                trashBar.setTrash(currentTrash);
+
     }
 
     void Update()
@@ -22,9 +23,14 @@ public class PlayerTrash : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject otherObj = collision.gameObject;
-        Debug.Log("Collided with: " + otherObj);
-        Destroy(otherObj);
-        currentTrash+=10;
-        trashBar.setTrash(currentTrash);
+        if (otherObj.tag == "Trash")
+        {
+            Destroy(otherObj);
+            currentTrash+=10;
+            trashBar.setTrash(currentTrash);
+        }else if(otherObj.tag == "Vaisseau"){
+            //Launch cinematic
+            
+        }
     }
 }
