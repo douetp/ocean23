@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class trashManagement : MonoBehaviour
+public class trashManagement : MonoBehaviour, IFlowMovable
 {
     // Start is called before the first frame update
+    private Rigidbody2D _rb;
+    // pr l'afficher dans l'éditeur
+    [SerializeField] private float coeffSpeed = 0.8f;
     
     private Vector2 currentFlowDir;
         public Vector2 CurrentFlowDir
@@ -50,19 +53,16 @@ public class trashManagement : MonoBehaviour
     }
 
 
-    public void updateEnterCurrent() {
-        this.CurrentFlowDir.set(Vector2 (0,8));
-        this.CurrentFlowForce.set(1.5f);
-    }
-
-
-    public void updateExitCurrent() {
-        this.CurrentFlowDir.set(Vector2 (0,0));
-        this.CurrentFlowForce.set(0f);
-    }
+    public void ApplyFlow() {
+            _rb.velocity += this.CurrentFlowDir * this.CurrentFlowForce * coeffSpeed;
+        }
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void FixedUpdate() {
+        this.ApplyFlow();
     }
 }

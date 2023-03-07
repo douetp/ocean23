@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class flowManagement : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    [SerializeField] private Vector2 direction = Vector2.right;
+    [SerializeField] private float force = 2f;
 
     void Start()
     {
@@ -14,25 +15,33 @@ public class flowManagement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        
         GameObject otherObj = collider.gameObject;
 
-        otherObj.updateEnterCurrent();
+        IFlowMovable movable = otherObj.GetComponent<IFlowMovable>();
 
-        otherObj.GetComponent<Rigidbody>().AddForce(otherObj.CurrentFlowDirection * otherObj.CurrentFlowForce);
+        if (movable != null) {
+            // Set flow values
+            movable.CurrentFlowDir = direction;
+            movable.CurrentFlowForce = force;
+        }
 
-        
-        Debug.Log("Velocity ++" + rb.velocity);
     }
 
     void OnTriggerExit2D(Collider2D collider)
-    {
+    {   
+        
         GameObject otherObj = collider.gameObject;
         
-        otherObj.updateExitCurrent();
-        otherObj.GetComponent<Rigidbody>().AddForce(otherObj.CurrentFlowDirection * otherObj.CurrentFlowForce);
-        
+        IFlowMovable movable = otherObj.GetComponent<IFlowMovable>();
 
-        Debug.Log("Velocity --" + rb.velocity);
+        if (movable != null) {
+            // Set flow values
+            movable.CurrentFlowDir = Vector2.zero;
+            movable.CurrentFlowForce = 0f;
+        }
+ 
+
     }
     // Update is called once per frame
     void Update()

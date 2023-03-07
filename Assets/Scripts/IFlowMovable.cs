@@ -16,6 +16,4 @@ public interface IFlowMovable
 
     void ApplyFlow();
 
-    void updateEnterCurrent();
-    void updateExitCurrent();
 }

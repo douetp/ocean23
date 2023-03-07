@@ -7,10 +7,43 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace Player
 {
-    [RequireComponent(typeof(InputManager), typeof(Rigidbody2D))]    public class PlayerController : MonoBehaviour
+    [RequireComponent(typeof(InputManager), typeof(Rigidbody2D))]    public class PlayerController : MonoBehaviour, IFlowMovable
     
     {
         private Rigidbody2D _rb;
+
+        private Vector2 currentFlowDir;
+        public Vector2 CurrentFlowDir
+        {
+            get
+            {
+                return currentFlowDir;
+            }
+            set
+            {   
+                currentFlowDir = value;
+            }
+        }
+
+        private float currentFlowForce;
+        public float CurrentFlowForce
+        {
+            get
+            {
+                return currentFlowForce;
+            }
+            set
+            {
+                currentFlowForce = value;
+            }
+        }
+
+        
+        public void ApplyFlow() {
+            _rb.velocity += this.CurrentFlowDir * this.CurrentFlowForce;
+        }
+
+
 
         [field: HideInInspector] public Vector2 MovementInput { get; set; }
 
@@ -62,6 +95,8 @@ namespace Player
             );
         
             _rb.velocity = newVelocity;
+
+            this.ApplyFlow();
 
         }
     }
