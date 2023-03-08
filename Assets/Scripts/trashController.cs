@@ -42,17 +42,6 @@ public class trashController : MonoBehaviour, IFlowMovable
 
     }
     //Make a log of the collision
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        GameObject otherObj = collision.gameObject;
-        Debug.Log("Collided with: " + otherObj);
-        
-        trashController movable = otherObj.GetComponent<trashController>();
-
-        if (movable == null) {
-            Destroy(this.gameObject);
-        }
-    }
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
