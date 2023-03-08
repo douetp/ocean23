@@ -112,6 +112,7 @@ namespace Player
         GameObject otherObj = collision.gameObject;
         if (otherObj.tag == "Trash" && currentTrash < maxTrash)
         {
+            Debug.Log(currentTrash);
             Destroy(otherObj);
             currentTrash+=10;
             trashBar.setTrash(currentTrash);
