@@ -24,6 +24,7 @@ public class flowManagement : MonoBehaviour
             // Set flow values
             movable.CurrentFlowDir = direction;
             movable.CurrentFlowForce = force;
+
         }
 
     }

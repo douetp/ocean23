@@ -15,6 +15,8 @@ namespace Player
         public int maxTrash = 50;
         public int currentTrash;
         public TrashBar trashBar;
+        public float maxVelocity = 20;
+
         private Vector2 currentFlowDir;
         public Vector2 CurrentFlowDir
         {
@@ -56,7 +58,7 @@ namespace Player
 
         // Movement Variables
         [SerializeField, Range(0f, 50f)]
-        private float maxSpeed = 10f;
+        private float maxSpeed = 5f;
         [SerializeField, Range(0f, 100f)]
         public float maxAcceleration = 30f;
         [SerializeField, Range(0f, 100f)]
@@ -100,8 +102,15 @@ namespace Player
                 Mathf.MoveTowards(_rb.velocity.x, desiredVelocity.x, maxVelocityChange.x),
                 Mathf.MoveTowards(_rb.velocity.y, desiredVelocity.y, maxVelocityChange.y)
             );
-        
-            _rb.velocity = newVelocity;
+
+            if (newVelocity.x <= maxVelocity) {
+                _rb.velocity = newVelocity;
+            } else {
+                Vector2 velMax = new Vector2(20f,_rb.velocity.y);
+                _rb.velocity = velMax;
+
+            }
+            Debug.Log(newVelocity);
 
             this.ApplyFlow();
 
@@ -112,7 +121,6 @@ namespace Player
         GameObject otherObj = collision.gameObject;
         if (otherObj.tag == "Trash" && currentTrash < maxTrash)
         {
-            Debug.Log(currentTrash);
             Destroy(otherObj);
             currentTrash+=10;
             trashBar.setTrash(currentTrash);

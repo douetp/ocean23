@@ -46,7 +46,6 @@ public class trashController : MonoBehaviour, IFlowMovable
     public void OnTriggerEnter2D(Collider2D collider)
     {
         GameObject otherObj = collider.gameObject;
-        Debug.Log("Triggered with: " + otherObj);
     }
 
 
