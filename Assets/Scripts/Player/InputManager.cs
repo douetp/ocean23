@@ -35,7 +35,7 @@ namespace Player
             
             // FR : Lecture de la 1er valeur
 
-            //float horizontalMovement = myArduino.values[0];
+           // float horizontalMovement = myArduino.values[0];
             //float verticalMovement = myArduino.values[1];
             // FR : Lecture de la 2eme valeur
             // EN : Read the second value
