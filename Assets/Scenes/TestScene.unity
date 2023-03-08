@@ -1238,11 +1238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6073675184498347981, guid: 7bab6db43ad331e43bb515772fb46fcd, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-<<<<<<< Updated upstream
       value: 509
-=======
-      value: 50
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 6073675184498347981, guid: 7bab6db43ad331e43bb515772fb46fcd, type: 3}
       propertyPath: ExternalForcesModule.influenceList.Array.size
