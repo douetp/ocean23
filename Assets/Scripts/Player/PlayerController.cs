@@ -110,7 +110,7 @@ namespace Player
         void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject otherObj = collision.gameObject;
-        if (otherObj.tag == "Trash")
+        if (otherObj.tag == "Trash" && currentTrash < maxTrash)
         {
             Destroy(otherObj);
             currentTrash+=10;
