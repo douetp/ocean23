@@ -148,7 +148,7 @@ namespace Player
         void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject otherObj = collision.gameObject;
-
+        Debug.Log("Collision");
         if (otherObj.tag == "Trash" && currentTrash < maxTrash)
         {
             Destroy(otherObj);
@@ -161,7 +161,6 @@ namespace Player
     }
     void OnTriggerEnter2D(Collider2D collision){
         GameObject otherObj = collision.gameObject;
-        Debug.Log("Trigger");
         if(otherObj.tag == "Vaisseau"){
             //Launch cinematic
             currentTrash = 0;
