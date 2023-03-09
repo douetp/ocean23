@@ -22,7 +22,8 @@ public class ControlScene : MonoBehaviour
         Debug.Log(myArduino.values[1]);
         if(myArduino.values[0]!=0&&myArduino.values[1]!=0)
         {
-            if ((myArduino.values[0] <= 490|| myArduino.values[0] >= 550) || (myArduino.values[1] <= 490 || myArduino.values[1] >= 550))
+            //if not in dead zone
+            if ((myArduino.values[0] <= 490 && myArduino.values[0] >= 550) && (myArduino.values[1] <= 490 && myArduino.values[1] >= 550))
             {
                 Debug.Log("Change scene");
                 //UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad, UnityEngine.SceneManagement.LoadSceneMode.Additive);
