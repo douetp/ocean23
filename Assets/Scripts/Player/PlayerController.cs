@@ -116,7 +116,6 @@ namespace Player
             } else if (newVelocity.x < -0.1f) {
                 transform.localScale = new Vector3(-0.1f, 0.1f, 1f);
             }
-            Debug.Log(newVelocity);
 
             this.ApplyFlow();
 
@@ -133,8 +132,14 @@ namespace Player
         }else if(otherObj.tag == "Vaisseau"){
             //Launch cinematic
             Debug.Log("Vaisseau");
-            
         }
     }
+    void OnTriggerEnter2D(Collider2D collision){
+        GameObject otherObj = collision.gameObject;
+         if(otherObj.tag == "Vaisseau"){
+            //Launch cinematic
+            Debug.Log("Vaisseau");
+        }
     }
+}
 }
