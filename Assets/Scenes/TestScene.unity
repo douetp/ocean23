@@ -1260,7 +1260,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1444,7 +1444,13 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6073675184498347980, guid: 7bab6db43ad331e43bb515772fb46fcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2006427371}
+    - targetCorrespondingSourceObject: {fileID: 6073675184498347980, guid: 7bab6db43ad331e43bb515772fb46fcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2067872092}
   m_SourcePrefab: {fileID: 100100000, guid: 7bab6db43ad331e43bb515772fb46fcd, type: 3}
 --- !u!4 &824359700 stripped
 Transform:
@@ -2290,7 +2296,9 @@ PolygonCollider2D:
       - {x: 65.61308, y: -5.172735}
       - {x: 65.64074, y: 5.343971}
       - {x: 27.325314, y: 5.455844}
+      - {x: 10.469136, y: 5.417146}
       - {x: -49.83906, y: 5.455153}
+  m_UseDelaunayMesh: 0
 --- !u!4 &1781879786
 Transform:
   m_ObjectHideFlags: 0
@@ -2856,4 +2864,3 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d7dd37f079802469e0267f459c385e, type: 3}
-
