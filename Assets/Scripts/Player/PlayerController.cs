@@ -110,6 +110,12 @@ namespace Player
                 _rb.velocity = velMax;
 
             }
+            //Flip sprite with size of 0.1 if needed 
+            if (newVelocity.x > 0.1f) {
+                transform.localScale = new Vector3(0.1f, 0.1f, 1f);
+            } else if (newVelocity.x < -0.1f) {
+                transform.localScale = new Vector3(-0.1f, 0.1f, 1f);
+            }
             Debug.Log(newVelocity);
 
             this.ApplyFlow();
