@@ -90,6 +90,7 @@ namespace Player
     
         private void FixedUpdate()
         {
+
             Vector2 desiredVelocity =
                 MovementInput * maxSpeed;
 
@@ -117,6 +118,7 @@ namespace Player
                 transform.localScale = new Vector3(-0.1f, 0.1f, 1f);
             }
 
+
             this.ApplyFlow();
 
         }
@@ -136,7 +138,7 @@ namespace Player
     }
     void OnTriggerEnter2D(Collider2D collision){
         GameObject otherObj = collision.gameObject;
-         if(otherObj.tag == "Vaisseau"){
+        if(otherObj.tag == "Vaisseau"){
             //Launch cinematic
             Debug.Log("Vaisseau");
         }
