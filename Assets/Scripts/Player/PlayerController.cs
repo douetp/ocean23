@@ -15,7 +15,7 @@ namespace Player
         public int maxTrash = 50;
         public int currentTrash;
         public TrashBar trashBar;
-        public float maxVelocity = 10;
+        public float maxVelocity = 7;
 
         private Vector2 currentFlowDir;
         public Vector2 CurrentFlowDir

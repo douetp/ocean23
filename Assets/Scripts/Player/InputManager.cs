@@ -39,7 +39,7 @@ namespace Player
             //float verticalMovement = myArduino.values[1];
             // FR : Lecture de la 2eme valeur
             // EN : Read the second value
-            
+            Debug.Log(horizontalMovement);
             _playerController.MovementInput = Vector2.ClampMagnitude(new Vector2(horizontalMovement, verticalMovement), 1);
 
         }
