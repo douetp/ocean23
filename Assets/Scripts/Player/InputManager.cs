@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Timers; // Importer le namespace System.Timers
+
 
 namespace Player
 {
@@ -11,7 +13,7 @@ namespace Player
         public ReadTwoArduinoValuesExample myArduino;
         public bool locked = false;        
         private PlayerController _playerController;
-
+        
         
 
         private void Awake()
@@ -39,9 +41,9 @@ namespace Player
             //float verticalMovement = myArduino.values[1];
             // FR : Lecture de la 2eme valeur
             // EN : Read the second value
-            Debug.Log(horizontalMovement);
             _playerController.MovementInput = Vector2.ClampMagnitude(new Vector2(horizontalMovement, verticalMovement), 1);
 
+            
         }
 
 

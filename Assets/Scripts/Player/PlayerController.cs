@@ -1,7 +1,8 @@
-using UnityEngine;
+ using UnityEngine;
 using UnityEngine.Serialization;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
+using System.Timers; // Importer le namespace System.Timers
 
 
 
@@ -12,10 +13,13 @@ namespace Player
     
     {
         private Rigidbody2D _rb;
+
+        private float timeLeft = 15; 
         public int maxTrash = 50;
         public int currentTrash;
         public TrashBar trashBar;
         public float maxVelocity = 7;
+        public ReadTwoArduinoValuesExample myArduino;
 
         private Vector2 currentFlowDir;
         public Vector2 CurrentFlowDir
@@ -90,7 +94,6 @@ namespace Player
     
         private void FixedUpdate()
         {
-
             Vector2 desiredVelocity =
                 MovementInput * maxSpeed;
 
@@ -120,12 +123,32 @@ namespace Player
 
 
             this.ApplyFlow();
-
+            /*
+            if ((myArduino.values[0] >= 490 || myArduino.values[0] <= 550) || (myArduino.values[1] >= 490 || myArduino.values[1] <= 550))
+            {
+                timeLeft = timeLeft - Time.deltaTime;
+                Debug.Log("Timer start");
+                Debug.Log(timeLeft);
+                if(timeLeft < 0){
+                    //Return to main menu
+                    Debug.Log("Return to main menu");
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu", UnityEngine.SceneManagement.LoadSceneMode.Single);
+                    //Destroy current scene
+                    UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("TestScene");
+                }
+            }
+            else
+            {
+                timeLeft = 15;
+            }
+            */
+            
         }
 
         void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject otherObj = collision.gameObject;
+
         if (otherObj.tag == "Trash" && currentTrash < maxTrash)
         {
             Destroy(otherObj);
@@ -138,9 +161,15 @@ namespace Player
     }
     void OnTriggerEnter2D(Collider2D collision){
         GameObject otherObj = collision.gameObject;
+        Debug.Log("Trigger");
         if(otherObj.tag == "Vaisseau"){
             //Launch cinematic
-            Debug.Log("Vaisseau");
+            currentTrash = 0;
+            trashBar.setTrash(currentTrash);
+        }else if(otherObj.tag == "Trash" && currentTrash < maxTrash){
+            Destroy(otherObj);
+            currentTrash+=10;
+            trashBar.setTrash(currentTrash);
         }
     }
 }

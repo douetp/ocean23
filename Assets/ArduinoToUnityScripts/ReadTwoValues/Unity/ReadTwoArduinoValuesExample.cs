@@ -43,7 +43,7 @@ public class ReadTwoArduinoValuesExample : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(serialPort.IsOpen);
+        //Debug.Log(serialPort.IsOpen);
         if (serialPort.IsOpen)
         {
             try
