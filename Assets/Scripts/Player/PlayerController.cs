@@ -123,8 +123,9 @@ namespace Player
 
 
             this.ApplyFlow();
-            /*
-            if ((myArduino.values[0] >= 490 || myArduino.values[0] <= 550) || (myArduino.values[1] >= 490 || myArduino.values[1] <= 550))
+            bool isMovingX = (myArduino.values[0] >= 490 || myArduino.values[0] <= 550);
+            bool isMovingY = (myArduino.values[1] >= 490 || myArduino.values[1] <= 550);
+            if ((myArduino.values[0] >= 490 && myArduino.values[0] <= 550) && (myArduino.values[1] >= 490 && myArduino.values[1] <= 550))
             {
                 timeLeft = timeLeft - Time.deltaTime;
                 Debug.Log("Timer start");
@@ -136,13 +137,9 @@ namespace Player
                     //Destroy current scene
                     UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("TestScene");
                 }
-            }
-            else
-            {
+            }else{
                 timeLeft = 15;
             }
-            */
-            
         }
 
         void OnCollisionEnter2D(Collision2D collision)
