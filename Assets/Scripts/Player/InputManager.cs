@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Timers; // Importer le namespace System.Timers
 
 
 namespace Player

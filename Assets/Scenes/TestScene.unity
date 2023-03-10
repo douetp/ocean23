@@ -803,7 +803,7 @@ MonoBehaviour:
   maxTrash: 50
   currentTrash: 0
   trashBar: {fileID: 1124621000}
-  maxVelocity: 10
+  maxVelocity: 25
   myArduino: {fileID: 392682957}
   maxSpeed: 6.8
   maxAcceleration: 79
@@ -892,7 +892,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &825756813
 PrefabInstance:
   m_ObjectHideFlags: 0
