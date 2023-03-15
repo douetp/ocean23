@@ -123,12 +123,8 @@ namespace Player
 
 
             this.ApplyFlow();
-<<<<<<< HEAD
-            if ((myArduino.values[0] >= 490 && myArduino.values[0] <= 550) || (myArduino.values[1] >= 490 && myArduino.values[1] <= 550))
-=======
             
             if ((myArduino.values[0] >= 490 && myArduino.values[0] <= 550) && (myArduino.values[1] >= 490 && myArduino.values[1] <= 550))
->>>>>>> main
             {
                 timeLeft = timeLeft - Time.deltaTime;
                 if(timeLeft < 0){
@@ -158,10 +154,7 @@ namespace Player
             Debug.Log("Vaisseau");
         }
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> main
     /*
     void OnTriggerEnter2D(Collider2D collision){
         GameObject otherObj = collision.gameObject;
