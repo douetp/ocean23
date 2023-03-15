@@ -114,7 +114,7 @@ namespace Player
                 _rb.velocity = velMax;
 
             }
-            //Flip sprite with size of 0.1 if needed 
+            //Flip sprite with size of 0.1 
             if (newVelocity.x > 0.1f) {
                 transform.localScale = new Vector3(0.1f, 0.1f, 1f);
             } else if (newVelocity.x < -0.1f) {
@@ -123,14 +123,16 @@ namespace Player
 
 
             this.ApplyFlow();
+<<<<<<< HEAD
             if ((myArduino.values[0] >= 490 && myArduino.values[0] <= 550) || (myArduino.values[1] >= 490 && myArduino.values[1] <= 550))
+=======
+            
+            if ((myArduino.values[0] >= 490 && myArduino.values[0] <= 550) && (myArduino.values[1] >= 490 && myArduino.values[1] <= 550))
+>>>>>>> main
             {
                 timeLeft = timeLeft - Time.deltaTime;
-                Debug.Log("Timer start");
-                Debug.Log(timeLeft);
                 if(timeLeft < 0){
                     //Return to main menu
-                    Debug.Log("Return to main menu");
                     UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu", UnityEngine.SceneManagement.LoadSceneMode.Single);
                     //Destroy current scene
                     UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("TestScene");
@@ -151,9 +153,15 @@ namespace Player
             trashBar.setTrash(currentTrash);
         }else if(otherObj.tag == "Vaisseau"){
             //Launch cinematic
+            currentTrash = 0;
+            trashBar.setTrash(currentTrash);
             Debug.Log("Vaisseau");
         }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
     /*
     void OnTriggerEnter2D(Collider2D collision){
         GameObject otherObj = collision.gameObject;
