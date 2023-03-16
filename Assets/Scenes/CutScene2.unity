@@ -149,12 +149,16 @@ PlayableDirector:
   m_GameObject: {fileID: 759722427}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 597c410237fbca24c95d7bd73b9c2bbc, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 766006eba1e7a35498af6b77f1cd0a1e, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: 7771604935848144580, guid: 766006eba1e7a35498af6b77f1cd0a1e, type: 2}
+    value: {fileID: 1469781935}
+  - key: {fileID: -3271447726202365950, guid: 766006eba1e7a35498af6b77f1cd0a1e, type: 2}
+    value: {fileID: 1797968858}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &759722429
@@ -293,7 +297,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.42700002}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 11.5}
+  m_AnchoredPosition: {x: 8, y: -115}
   m_SizeDelta: {x: 547.6694, y: 44.4626}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1469781935
@@ -316,7 +320,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1469781936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,7 +342,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Le continent plastique est l\xE0 !"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -536,6 +539,8 @@ PlayableDirector:
     value: {fileID: 1469781935}
   - key: {fileID: -1626458429092833772, guid: d8b3c2ff199d021458d018e060a6567a, type: 2}
     value: {fileID: 1797968858}
+  - key: {fileID: -3751472765272963819, guid: d8b3c2ff199d021458d018e060a6567a, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1761732242
@@ -640,10 +645,10 @@ RectTransform:
   m_Father: {fileID: 1706731381}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 312, y: -218.5}
+  m_SizeDelta: {x: 624, y: 437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1797968856
 MonoBehaviour:
@@ -658,15 +663,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.21960784}
+  m_Color: {r: 0.49803925, g: 0.49803925, b: 0.49803925, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: bbe8f4623bd9f284e834adb5f0f48265, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -703,4 +708,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
