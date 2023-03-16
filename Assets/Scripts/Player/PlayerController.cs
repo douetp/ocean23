@@ -145,7 +145,7 @@ namespace Player
         if (otherObj.tag == "Trash" && currentTrash < maxTrash)
         {
             Destroy(otherObj);
-            currentTrash+=5;
+            currentTrash+=2;
             trashBar.setTrash(currentTrash);
         }else if(otherObj.tag == "Vaisseau"){
             //Launch cinematic
