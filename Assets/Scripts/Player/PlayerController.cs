@@ -147,27 +147,19 @@ namespace Player
             Destroy(otherObj);
             currentTrash+=2;
             trashBar.setTrash(currentTrash);
-        }else if(otherObj.tag == "Vaisseau"){
-            //Launch cinematic
-            currentTrash = 0;
-            trashBar.setTrash(currentTrash);
-            Debug.Log("Vaisseau");
         }
     }
 
-    /*
+    
     void OnTriggerEnter2D(Collider2D collision){
         GameObject otherObj = collision.gameObject;
-        if(otherObj.tag == "Vaisseau"){
-            //Launch cinematic
-            currentTrash = 0;
-            trashBar.setTrash(currentTrash);
-        }else if(otherObj.tag == "Trash" && currentTrash < maxTrash){
-            Destroy(otherObj);
-            currentTrash+=10;
-            trashBar.setTrash(currentTrash);
+        if(otherObj.tag == "TriggerCinematic"){
+            UnityEngine.SceneManagement.SceneManager.LoadScene("CutScene2", UnityEngine.SceneManagement.LoadSceneMode.Single);
+                //Destroy current scene
+            UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("TestScene");
+            
         }
     }
-    */
+    
 }
 }

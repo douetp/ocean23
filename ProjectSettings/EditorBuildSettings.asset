@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 2923f74fea69b7447bf1c6954af9d96b
+  - enabled: 1
+    path: Assets/Scenes/CutScene2.unity
+    guid: ef25c4c6fe307f84e97ed6ce2582b0dc
+  - enabled: 1
+    path: Assets/Scenes/Scene Dechet.unity
+    guid: 17b800ac23c43dc479822d8375954e46
   m_configObjects: {}
