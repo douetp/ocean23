@@ -310,7 +310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -301, y: 201}
+  m_AnchoredPosition: {x: -319, y: 199}
   m_SizeDelta: {x: -902, y: -448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &158972772
@@ -333,8 +333,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Une fois la jauge de d\xE9chets remplie, le drone retourne sur plateforme
-    pour que les d\xE9chets puissent etre tri\xE9s !"
+  m_text: "Le drone retourne sur la plateforme pour que les d\xE9chets soient tri\xE9s
+    !"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -100.09677, y: 0, z: -711.631, w: 0}
+  m_margin: {x: -100.09677, y: 0, z: -736.67114, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -776,10 +776,16 @@ PlayableDirector:
     value: {fileID: 294491179}
   - key: {fileID: 4020165201446698869, guid: 96cff0b935205f5cfbdc43f1412e7521, type: 2}
     value: {fileID: 294491179}
-  - key: {fileID: -7085292069994507848, guid: 96cff0b935205f5cfbdc43f1412e7521, type: 2}
-    value: {fileID: 294491179}
   - key: {fileID: -4414400942426700479, guid: 96cff0b935205f5cfbdc43f1412e7521, type: 2}
     value: {fileID: 2141909339}
+  - key: {fileID: 8231321149185705808, guid: 96cff0b935205f5cfbdc43f1412e7521, type: 2}
+    value: {fileID: 294491179}
+  - key: {fileID: 0}
+    value: {fileID: 294491179}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: -8438070969139700231, guid: 96cff0b935205f5cfbdc43f1412e7521, type: 2}
+    value: {fileID: 294491179}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &2023409014
@@ -825,7 +831,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141909336}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -112.2, y: 2.1, z: -50}
+  m_LocalPosition: {x: -117.2, y: 4, z: -10}
   m_LocalScale: {x: 0.40851358, y: 0.42520478, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
