@@ -7581,7 +7581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12708243be39c2849a17f07319ee7d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTrash: 50
+  maxTrash: 100
   currentTrash: 0
   trashBar: {fileID: 1026406556}
   maxVelocity: 25
@@ -10708,9 +10708,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 50
+  m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 50
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

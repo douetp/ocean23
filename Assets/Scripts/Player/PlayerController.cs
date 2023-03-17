@@ -26,7 +26,7 @@ namespace Player
         private Rigidbody2D _rb;
 
         private float timeLeft = 15; 
-        public int maxTrash = 50;
+        public int maxTrash;
         public int currentTrash;
         public TrashBar trashBar;
         public float maxVelocity = 7;
@@ -67,6 +67,7 @@ namespace Player
             currentTrash = 0;
             trashBar.setMaxTrash(maxTrash);
             trashBar.setTrash(currentTrash);
+            Debug.Log(maxTrash);
         }
 
         [field: HideInInspector] public Vector2 MovementInput { get; set; }
@@ -168,7 +169,7 @@ namespace Player
         if (otherObj.tag == "Trash" && currentTrash < maxTrash)
         {
             Destroy(otherObj);
-            currentTrash+=2;
+            currentTrash+=3;
             trashBar.setTrash(currentTrash);
         }
     }
