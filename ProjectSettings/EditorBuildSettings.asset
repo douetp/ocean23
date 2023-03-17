@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene Dechet.unity
     guid: 17b800ac23c43dc479822d8375954e46
+  - enabled: 1
+    path: Assets/Scenes/CutScene3.unity
+    guid: e83ac7901c73dcb00a817d9272f55407
   m_configObjects: {}
