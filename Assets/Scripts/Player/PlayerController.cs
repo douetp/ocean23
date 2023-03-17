@@ -1,8 +1,9 @@
- using UnityEngine;
+using UnityEngine;
 using UnityEngine.Serialization;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 using System.Timers; // Importer le namespace System.Timers
+using UnityEngine.SceneManagement;
 
 
 
@@ -11,7 +12,17 @@ namespace Player
     [RequireComponent(typeof(InputManager), typeof(Rigidbody2D))]    
     public class PlayerController : MonoBehaviour, IFlowMovable
     
+
+    
+
+
     {
+        [SerializeField]
+        private float delayBeforeLoading = 3f;
+        [SerializeField]
+        private string sceneNameToLoad;
+        private float timeElapsed;
+    
         private Rigidbody2D _rb;
 
         private float timeLeft = 15; 
@@ -139,9 +150,15 @@ namespace Player
             }
             if (currentTrash >= maxTrash)
             {
-                UnityEngine.SceneManagement.SceneManager.LoadScene("CutScene3", UnityEngine.SceneManagement.LoadSceneMode.Single);
-                //Destroy current scene
-                UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Scene Dechet");
+                timeElapsed += Time.deltaTime;
+                Debug.Log(timeElapsed);
+                if (timeElapsed > delayBeforeLoading)
+                {
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("CutScene3", UnityEngine.SceneManagement.LoadSceneMode.Single);
+                    //Destroy current scene
+                    UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Scene Dechet");
+                }
+                
             }
         }
 
@@ -160,6 +177,8 @@ namespace Player
     void OnTriggerEnter2D(Collider2D collision){
         GameObject otherObj = collision.gameObject;
         if(otherObj.tag == "TriggerCinematic"){
+
+
             UnityEngine.SceneManagement.SceneManager.LoadScene("CutScene2", UnityEngine.SceneManagement.LoadSceneMode.Single);
                 //Destroy current scene
             UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("TestScene");
