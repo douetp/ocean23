@@ -137,6 +137,12 @@ namespace Player
             else{
                 timeLeft = 15;
             }
+            if (currentTrash >= maxTrash)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("CutScene3", UnityEngine.SceneManagement.LoadSceneMode.Single);
+                //Destroy current scene
+                UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Scene Dechet");
+            }
         }
 
         void OnCollisionEnter2D(Collision2D collision)
