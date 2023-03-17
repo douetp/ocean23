@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+using UnityEngine.Playables;
+
 
 public class ControlScene : MonoBehaviour
 {
@@ -12,21 +16,20 @@ public class ControlScene : MonoBehaviour
 
     void Start()
     {
-        
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(myArduino.values[0]);
-        Debug.Log(myArduino.values[1]);
+        
         if(myArduino.values[0]!=0&&myArduino.values[1]!=0)
         {
             //if not in dead zone
             if ((myArduino.values[0] <= 490 && myArduino.values[0] >= 550) && (myArduino.values[1] <= 490 && myArduino.values[1] >= 550))
             {
                 Debug.Log("Change scene");
-                //UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+                UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad, UnityEngine.SceneManagement.LoadSceneMode.Additive);
             }
         }else if(Input.GetKeyDown(KeyCode.Space))
         {
