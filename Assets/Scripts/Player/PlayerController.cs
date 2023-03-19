@@ -18,7 +18,7 @@ namespace Player
 
     {
         [SerializeField]
-        private float delayBeforeLoading = 3f;
+        private float delayBeforeLoading = 6f;
         [SerializeField]
         private string sceneNameToLoad;
         private float timeElapsed;
