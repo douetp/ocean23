@@ -24,7 +24,7 @@
     
   - Danny Lahcene
     
-  - Elsa
+  - Elsa Nagel
     
 
 ## Prérequis Avant de pouvoir lancer ce projet, vous devez installer les logiciels suivants :
