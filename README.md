@@ -24,7 +24,7 @@
     
   - Danny Lahcene
     
-  - Elsa Nagel
+  - Elsa
     
 
 ## Prérequis Avant de pouvoir lancer ce projet, vous devez installer les logiciels suivants :
@@ -54,6 +54,27 @@ Suivez les étapes ci-dessous pour lancer le projet :
 4. Unity ouvrira maintenant le projet et vous pourrez commencer à l'utiliser.
 
 C'est tout! Vous pouvez maintenant cloner et lancer le projet Unity sans aucun problème. Si vous rencontrez des problèmes, veuillez vous assurer d'avoir suivi toutes les étapes correctement.
+
+## Build du Projet Unity
+
+Pour construire votre projet Unity, suivez les étapes ci-dessous :
+
+1. Cliquez sur **Fichier** dans la barre de menu Unity, puis sur **Build Settings**.
+  
+2. Dans la fenêtre **Build Settings**, cliquez sur **Ajouter un niveau**.
+  
+3. Ajoutez tous les niveaux de votre projet à la liste.
+  
+4. Vérifiez que la plateforme de destination est correctement sélectionnée. Si vous souhaitez créer un build pour Windows, sélectionnez "PC, Mac & Linux Standalone".
+  
+5. Cliquez sur **Build**.
+  
+6. Sélectionnez le dossier où vous souhaitez enregistrer votre build et cliquez sur **Enregistrer**.
+  
+7. Patientez pendant que Unity construit votre projet.
+  
+
+C'est tout ! Vous avez maintenant créé un build de votre projet Unity.
 
 ## Maquette du Projet
 
